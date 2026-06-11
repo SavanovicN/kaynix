@@ -90,7 +90,7 @@ in {
       # Media Tools
       "calibre"
       "vlc"
-      "spotify",
+      "spotify"
       "gimp"
       "transmission"
 
