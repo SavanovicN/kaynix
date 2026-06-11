@@ -16,7 +16,7 @@ in
     # AeroSpace is macOS-only (nix-darwin launchd). No-op on other platforms.
     # Keep start-at-login false (module assertion). Config lives here, not ~/.config/aerospace/aerospace.toml.
     services.aerospace = {
-      enable = true;
+      enable = false;
       settings = {
         after-login-command = [];
         after-startup-command = [
