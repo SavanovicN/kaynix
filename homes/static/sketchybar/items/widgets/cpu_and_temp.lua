@@ -2,7 +2,7 @@ local icons = require("icons")
 local colors = require("colors")
 local settings = require("settings")
 
-local MACMON = "/etc/profiles/per-user/" .. (os.getenv("USER") or "kaynetik") .. "/bin/macmon"
+local MACMON = "/etc/profiles/per-user/" .. (os.getenv("USER") or "savan") .. "/bin/macmon"
 local UPDATE_FREQ = 5
 
 local temp = sbar.add("graph", "widgets.temp", 42, {

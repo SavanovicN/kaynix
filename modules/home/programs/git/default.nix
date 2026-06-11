@@ -18,14 +18,14 @@ in {
       enable = true;
       lfs.enable = true;
       signing = {
-        format = "openpgp";
+        format = "ssh";
         signByDefault = true;
-        key = "FC04210D2782C032";
+        key = "${config.home.homeDirectory}/.ssh/id_rsa.pub";
       };
       settings = {
         user = {
-          name = "kaynetik";
-          email = "aleksandar@nesovic.dev";
+          name = "SavanovicN";
+          email = "nikola.savanovic.tl@gmail.com";
         };
         credential = lib.mkIf pkgs.stdenv.isDarwin {helper = "osxkeychain";};
         push = {autoSetupRemote = true;};

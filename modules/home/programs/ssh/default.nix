@@ -32,13 +32,13 @@ in {
         "github.com" = {
           HostName = "github.com";
           User = "git";
-          IdentityFile = "~/.ssh/prim_sk_id_ed25519";
+          IdentityFile = "~/.ssh/id_rsa";
           IdentitiesOnly = true;
         };
         "gist.github.com" = {
           HostName = "gist.github.com";
           User = "git";
-          IdentityFile = "~/.ssh/prim_sk_id_ed25519";
+          IdentityFile = "~/.ssh/id_rsa";
           IdentitiesOnly = true;
         };
       };

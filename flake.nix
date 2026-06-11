@@ -65,24 +65,16 @@
         # / M5. Drop this override (and pkgs/grafana-alloy/) once the lock
         # contains nixpkgs commit 917ae486907dfd008c4c6ac3fa4985c942f7aaf7.
         grafana-alloy = final.callPackage ./pkgs/grafana-alloy {};
-
-        # Local tfenv checkout while the Darwin ggrep + writable TFENV_CONFIG_DIR
-        # fixes are in flight upstream. Drop once the PR is merged and the lock
-        # picks it up.
-        tfenv =
-          final.callPackage
-          /Users/kaynetik/Development/Personal/nix-foss/nixpkgs/pkgs/by-name/tf/tfenv/package.nix
-          {};
       };
 
     # Per-host config. Add an entry here when deploying to a new machine.
     # Shared defaults live in the modules; `config` overrides per machine.
     hosts = {
-      knt-mbp = {
+      savan-mbp = {
         system = "aarch64-darwin";
-        username = "kaynetik";
+        username = "savan";
         config = {
-          homeStateVersion = "24.11";
+          homeStateVersion = "26.05";
           timeZone = "Europe/Belgrade";
           loginGreeting = "nixing";
           sketchybar.theme = "rose_pine";
@@ -90,30 +82,15 @@
             knownNetworkServices = [
               "Wi-Fi"
               "Thunderbolt Bridge"
-              "ThinkPad TBT 3 Dock"
-              "USB 10/100 LAN"
+              "USB 10/100/1000 LAN"
             ];
             dns = [
-              "192.168.2.1"
+              "192.168.1.1"
               "1.1.1.1"
               "1.0.0.1"
               "8.8.8.8"
               "8.8.4.4"
             ];
-          };
-        };
-      };
-
-      mbp = {
-        system = "aarch64-darwin";
-        username = "kaynetik";
-        config = {
-          homeStateVersion = "26.05";
-          timeZone = "Europe/Belgrade";
-          sketchybar.theme = "rose_pine";
-          networking = {
-            knownNetworkServices = ["Wi-Fi" "Thunderbolt Bridge"];
-            dns = ["1.1.1.1" "1.0.0.1" "8.8.8.8" "8.8.4.4"];
           };
         };
       };
@@ -150,7 +127,7 @@
             };
             home-manager.sharedModules = [sops-nix.homeManagerModules.sops];
             home-manager.backupFileExtension = "hm-backup";
-            home-manager.users.${username} = import ./homes/kaynetik.nix;
+            home-manager.users.${username} = import ./homes/savan.nix;
           }
 
           {
@@ -163,7 +140,7 @@
         ];
       };
 
-    primaryHost = hosts.knt-mbp;
+    primaryHost = hosts.savan-mbp;
   in {
     darwinConfigurations = builtins.mapAttrs mkDarwin hosts;
 

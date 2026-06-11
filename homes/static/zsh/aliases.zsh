@@ -19,7 +19,23 @@ function ssh() {
   return $ret
 }
 
+# Local checkout of this flake repo
+KAYNIX_DIR="$HOME/Code/kaynix"
+
+# kaynix rebuild: apply this repo's nix-darwin config to the machine
+function kaynix() {
+  case "$1" in
+    rebuild)
+      sudo darwin-rebuild switch --flake "$KAYNIX_DIR#savan-mbp"
+      ;;
+    *)
+      echo "usage: kaynix rebuild" >&2
+      return 1
+      ;;
+  esac
+}
+
 # Dev shells -- enter from anywhere
-alias shell-default="nix develop $HOME/Development/Personal/kaynix#default"
-alias shell-python="nix develop $HOME/Development/Personal/kaynix#python"
-alias shell-sketchy="nix develop $HOME/Development/Personal/kaynix#sketchybar"
+alias shell-default="nix develop $KAYNIX_DIR#default"
+alias shell-python="nix develop $KAYNIX_DIR#python"
+alias shell-sketchy="nix develop $KAYNIX_DIR#sketchybar"

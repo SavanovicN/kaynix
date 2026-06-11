@@ -8,7 +8,10 @@
 }: {
   imports = [
     ../modules/home
-    ./sops.nix
+    # sops-nix is disabled until a personal age/YubiKey identity is set up.
+    # The encrypted secrets/secrets.yaml still belongs to the upstream owner;
+    # re-key it (see secrets/README.md) and re-add ./sops.nix to enable.
+    # ./sops.nix
   ];
 
   programs.home-manager.enable = true;
@@ -29,7 +32,9 @@
   ];
 
   kaynix.programs = {
-    agents.enable = lib.mkDefault true;
+    # Disabled: symlinks ~/.cursor/skills and ~/.claude/skills to a checkout of
+    # kaynetik-skills that does not exist here. Enable once you have your own.
+    agents.enable = lib.mkDefault false;
     atuin.enable = lib.mkDefault true;
     eza.enable = lib.mkDefault true;
     fzf.enable = lib.mkDefault true;

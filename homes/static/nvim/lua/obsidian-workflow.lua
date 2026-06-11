@@ -34,20 +34,20 @@ vim.keymap.set("n", "<leader>of", ":s/\\(# \\)[^_]*_/\\1/ | s/-/ /g<cr>")
 vim.keymap.set(
   "n",
   "<leader>os",
-  ':Telescope find_files search_dirs={"/Users/kaynetik/Documents/obsidian_vault/notes"}<cr>'
+  ':Telescope find_files search_dirs={"/Users/savan/Documents/obsidian_vault/notes"}<cr>'
 )
 vim.keymap.set(
   "n",
   "<leader>oz",
-  ':Telescope live_grep search_dirs={"/Users/kaynetik/Documents/obsidian_vault/notes"}<cr>'
+  ':Telescope live_grep search_dirs={"/Users/savan/Documents/obsidian_vault/notes"}<cr>'
 )
 --
 -- search for files in notes (ignore zettelkasten)
--- vim.keymap.set("n", "<leader>ois", ":Telescope find_files search_dirs={\"/Users/kaynetik/Documents/obsidian_vault/notes\"}<cr>")
--- vim.keymap.set("n", "<leader>oiz", ":Telescope live_grep search_dirs={\"/Users/kaynetik/Documents/obsidian_vault/notes\"}<cr>")
+-- vim.keymap.set("n", "<leader>ois", ":Telescope find_files search_dirs={\"/Users/savan/Documents/obsidian_vault/notes\"}<cr>")
+-- vim.keymap.set("n", "<leader>oiz", ":Telescope live_grep search_dirs={\"/Users/savan/Documents/obsidian_vault/notes\"}<cr>")
 --
 -- for review workflow
 -- move file in current buffer to zettelkasten folder
-vim.keymap.set("n", "<leader>ok", ":!mv '%:p' /Users/kaynetik/Documents/obsidian_vault/zettelkasten<cr>:bd<cr>")
+vim.keymap.set("n", "<leader>ok", ":!mv '%:p' /Users/savan/Documents/obsidian_vault/zettelkasten<cr>:bd<cr>")
 -- delete file in current buffer
 vim.keymap.set("n", "<leader>odd", ":!rm '%:p'<cr>:bd<cr>")

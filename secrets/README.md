@@ -82,7 +82,7 @@ This extracts the decryption command from the sops-nix LaunchAgent plist and run
 From the repository root (paths must match `path_regex` in `.sops.yaml`):
 
 ```bash
-cd ~/Development/Personal/kaynix
+cd ~/Code/kaynix
 nix develop   # or: nix shell nixpkgs#sops nixpkgs#age nixpkgs#age-plugin-yubikey
 sops secrets/secrets.yaml
 ```

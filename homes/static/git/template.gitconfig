@@ -1,7 +1,10 @@
 [user]
-    name = kaynetik
-    email = aleksandar.nesovic@magic.xyz
-    signingkey = 13F37DAF0375C97B
+    name = SavanovicN
+    email = nikola.savanovic.tl@gmail.com
+    signingkey = /Users/savan/.ssh/id_rsa.pub
+
+[gpg]
+    format = ssh
 
 [commit]
     gpgsign = true

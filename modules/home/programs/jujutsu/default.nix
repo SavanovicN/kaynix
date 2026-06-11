@@ -15,15 +15,15 @@ in {
       enable = true;
       settings = {
         user = {
-          name = "kaynetik";
-          email = "aleksandar@nesovic.dev";
+          name = "SavanovicN";
+          email = "nikola.savanovic.tl@gmail.com";
         };
         fetch.prune = true;
         init.default_branch = "main";
         lfs.enabled = true;
         signing = {
           backend = "ssh";
-          key = "${config.home.homeDirectory}/.ssh/prim_sk_id_ed25519";
+          key = "${config.home.homeDirectory}/.ssh/id_rsa.pub";
         };
         push = {
           autoSetupRemote = true;

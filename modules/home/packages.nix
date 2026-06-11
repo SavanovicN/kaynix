@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  dotNixRoot = "${config.home.homeDirectory}/Development/Personal/kaynix";
+  dotNixRoot = "${config.home.homeDirectory}/Code/kaynix";
 
   kaynix-scripts = pkgs.runCommand "kaynix-scripts" {} ''
     mkdir -p $out/bin
