@@ -65,6 +65,8 @@
         # / M5. Drop this override (and pkgs/grafana-alloy/) once the lock
         # contains nixpkgs commit 917ae486907dfd008c4c6ac3fa4985c942f7aaf7.
         grafana-alloy = final.callPackage ./pkgs/grafana-alloy {};
+
+        zapmenu = final.callPackage ./pkgs/zapmenu {};
       };
 
     # Per-host config. Add an entry here when deploying to a new machine.
@@ -76,7 +78,7 @@
         config = {
           homeStateVersion = "26.05";
           timeZone = "Europe/Belgrade";
-          loginGreeting = "nixing";
+          loginGreeting = "Lets build something great today!";
           sketchybar.theme = "rose_pine";
           networking = {
             knownNetworkServices = [

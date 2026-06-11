@@ -5,6 +5,8 @@
 }: let
   sketchybar = "/run/current-system/sw/bin/sketchybar";
 
+  zapmenu = "${pkgs.zapmenu}/bin/zapmenu";
+
   toggleBars = pkgs.writeShellScript "toggle-bars" ''
     pkill -USR1 zapmenu
     ${sketchybar} --bar hidden=toggle
@@ -19,7 +21,7 @@ in
         after-login-command = [];
         after-startup-command = [
           "exec-and-forget borders style=round hidpi=on active_color=0xffe2e2e3 inactive_color=0xff414550 width=5.0"
-          "exec-and-forget /usr/local/bin/zapmenu"
+          "exec-and-forget ${zapmenu}"
         ];
 
         exec-on-workspace-change = [

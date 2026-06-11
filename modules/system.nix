@@ -42,7 +42,7 @@
         AppleShowAllExtensions = true;
       };
 
-      loginwindow.LoginwindowText = hostConfig.loginGreeting or "nixing";
+      loginwindow.LoginwindowText = hostConfig.loginGreeting or "Let's do something great today!";
     };
   };
 

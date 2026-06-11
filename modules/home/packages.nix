@@ -137,6 +137,7 @@
   ];
 
   darwinOnly = with pkgs; [
+    zapmenu
     jankyborders
     nowplaying-cli
     sbarlua
